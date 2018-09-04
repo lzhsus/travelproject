@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+section {
+    width: 1200px;
+    padding: 0 30px;
+    margin:20px auto 0;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+/*hotel-tit-left 顶部轮播*/
+.hotel-tit-left {
+    float: left;
+    width: 407px;
+    height: 370px;
+    border: 2px solid #1ab2db;
+    padding: 26px 44px;
+    margin-right: 20px;
+}
+
+/*搜索标题*/
+.hotel-tit-left > div {
+    overflow: hidden;
+
+}
+
+.hotel-tit-left > div span {
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    float: left;
+    padding-bottom: 10px;
+    color: #9c9c9c;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.hotel-tit-left > div span:nth-of-type(1) {
+    width: 60%;
+}
+
+.hotel-tit-left > div span:nth-of-type(2) {
+    width: 40%;
+}
+
+/*选中状态i*/
+.hotel-tit-left > div .active {
+    border-bottom: 3px solid #1ab2db;
+    padding-bottom: 8px;
+    color: #1ab2db;
+}
+
+/*form表单  搜索*/
+.form-tit-block {
+    padding: 10px 0;
+}
+.more-content{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 300px;
+    height: 150px;
+    background-color: #fff;
+    border: #cfcfcf;
+}
+.form-tit-block:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.form-tit-block label {
+    display: block;
+    float: left;
+    width: 76px;
+    font-size: 16px;
+    text-align: center;
+    color: #9c9c9c;
+    line-height: 29px;
+}
+.form-tit-block label:nth-of-type(2) a {
+    color: #1ab2db;
+    font-size: 12px;
+}
+
+.form-tit-block input {
+    padding: 4px 10px;
+    width: 148px;
+    height: 29px;
+    border: 1px solid #cccccc;
+    float: left;
+    margin-left: 6px;
+}
+
+.but-og input {
+    background-color: #ffc600;
+    color: #fff9eb;
+    font-size: 18px;
+    padding: 0;
+    width: 73%;
+}
+
+.input-long input {
+    width: 73%;
+}
+
+/*轮播图*/
+.hotel-tit-right {
+    width: 708px;
+    height: 370px;
+    float: right;
+    /*background-color: red;*/
+    position: relative;
+}
+
+.hotel-tit-right img {
+    width: 100%;
+}
+
+.swiper-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.content-text {
+    padding: 10px;
+    z-index: 1;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 170px;
+    height: 220px;
+    border: 1px solid rgba(171, 171, 171, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content-text h1 {
+    padding-bottom: 10px;
+    color: #e3e7eb;
+    font-size: 18px;
+}
+
+.content-text p {
+    font-size: 10px;
+    color: #e3e7eb;
+}
+
+/*内容以*/
+.hotelP1,.hotelP2,.hotelP3 {
+    margin-top: 34px;
+    margin-bottom: 20px;
+}
+
+.hotel-content .p1-title {
+    border-left: 8px solid #00a0e9;
+    border-bottom: 2px solid #cccccc;
+
+}
+
+.hotel-content .p1-title h3 {
+    font-size: 24px;
+    color: #010101;
+    float: left;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+.hotel-content .p1-title ul {
+    padding-left: 110px;
+    padding-top: 10px;
+    float: left;
+}
+
+.hotel-content .p1-title ul li {
+    float: left;
+}
+
+.hotel-content .p1-title ul li a {
+    padding: 7px 16px;
+    color: #959595;
+}
+
+.hotel-content .p1-title ul li .active {
+    background-color: #00a0e9;
+    color: #fff;
+}
+
+.hotel-content .p1-title > div:nth-of-type(2) {
+    margin-top: 10px;
+    float: right;
+}
+
+.hotel-content .p1-title > div:nth-of-type(2) span {
+    color: #666;
+}
+
+.hotel-content .p1-title > div:nth-of-type(2) img{
+    transform: rotate(270deg);
+}
+/*图片区域*/
+/*左边*/
+.hotel-content .content-center-recommend{
+    position: relative;
+}
+.hotel-content .img-text-up{
+    color: #000;
+    font-size: 30px;
+    line-height: 124px;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    bottom: 72px;
+    left: 64px;
+    width: 160px;
+    height: 124px;
+    background-color: rgba(255,255,255,0.5);
+}
+/*右边*/
+.hotel-content .content-center-scenic{
+    float: right;
+}
+.hotel-content .content-center-scenic ul li{
+    margin-left: 8px;
+    margin-right: 0;
+}
+.hotel-content .content-center-scenic h3{
+    font-size: 18px;
+}
+.hotel-content .content-center-scenic li div:nth-of-type(3) span:nth-of-type(2){
+    color: #989898;
+    font-size: 14px;
+    padding-right: 0;
+    margin-left: 66px;
+}
+.hotel-content .content-center-scenic li div:nth-of-type(3) span:nth-of-type(3){
+    color: #989898;
+    font-size: 14px;
+}
+.hotelP1 .hotel-content .p1-title ul li .active{
+    background-color: #1448ad;
+
+}
+.hotelP2 .hotel-content .p1-title ul li .active{
+    background-color: #e7a54d;
+}
+/*tit  边框*/
+.hotelP1 .hotel-content .p1-title{
+    border-left: 8px solid #1448ad;
+    height: 40px;
+}
+.hotelP2 .hotel-content .p1-title{
+    border-left: 8px solid #00a0e9;
+    height: 40px;
+}
+.hotelP3 .hotel-content .p1-title{
+    border-left: 8px solid #e7a54d;
+    height: 40px;
+}
+.hotelP4 .hotel-content .p1-title{
+    border-left: 8px solid #8fc31f;
+    height: 40px;
+}
+/*特色酒店区域*/
+.feature-img{
+    margin-top: 40px;
+    height: 710px;
+}
+.feature-img>div{
+    height: 302px;
+    width: 100%;
+    margin-bottom: 54px;
+}
+.feature-img>div:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.feature-img .big-img{
+    box-sizing: border-box;
+    float: left;
+    overflow: hidden;
+    width: 190px;
+    height: 100%;
+    position: relative;
+    font-size: 32px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 100%;
+
+}
+.feature-img .big-img div{
+    padding: 22% 41%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.3);
+}
+.feature-img .big-img img{
+    height: 100%;
+}
+.feature-img .big-img h4{
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    font-size: 16px;
+    color: #ffffff;
+    width: 290px;
+    line-height: 30px;
+    height: 30px;
+    text-align: left;
+    padding-left: 10px;
+}
+/*gengduo */
+.more-click{
+    padding: 7px 2px;
+}
+.moreteavel{
+    top: 38px;
+}
+.hotel-content .p1-title > div:nth-of-type(2) .bubian5{
+    transform: rotate(0deg);
+}
+.hotel-content .p1-title .more-click ul{
+    padding-left: 20px;
+}
+.hotel-content .p1-title .more-click ul li{
+    color: #666;
+}
+.hotel-content .p1-title .more-click ul li:hover{
+    color: red;
+}

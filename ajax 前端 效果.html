@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<head>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <title>账户管理</title>
+    <script type="text/javascript">
+        function retrieve(){
+            var name=$("#nameretrieve").val();
+            //每次检索前，清除表格行
+            $("#dataTable tbody").empty();
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "accountRetrieve.action?name="+name,
+                success: function (data) {
+                    var len=data.length;
+                    if(len>0){
+                        //动态添加行
+                        for(var i=0;i<len;i++){
+                            $("#dataTable").append("<tr id='trid_"+data[i].id+"'>"
+                                +"<td>"+data[i].user+"</td>"
+                                +"<td>"+data[i].level+"</td>"
+                                +"<td>"+data[i].createdate+"</td>"
+                                +"<td><a id='ruerid_"+data[i].id+"' onclick='pwdreset(this.id)' style='cursor:pointer;color:blue'>重置</a></td>"
+                                +"<td><a id='duerid_"+data[i].id+"' onclick='userdelete(this.id)' style='cursor:pointer;color:red'>删除</a></td>"
+                                +"</tr>");
+                        }
+                    }
+                    else{
+                        alert("账号不存在！");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+        function pwdreset(userid){
+            $.ajax({
+                type: "post",
+                dataType: "text",
+                url: "accountReset.action?userid="+userid.substr(7),
+                success: function (data) {
+                    if(data!="success"){
+                        alert(data);
+                    }
+                    else{
+                        alert("密码重置成功！");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+        function userdelete(userid){
+            if(confirm("确定删除此账号吗？")){
+                $.ajax({
+                    type: "post",
+                    dataType: "text",
+                    url: "accountDelete.action?userid="+userid.substr(7),
+                    success: function (data) {
+                        if(data!="success"){
+                            alert(data);
+                        }
+                        else{
+                            //删除成功后，删除表格行
+                            alert("删除成功！");
+                            $("#trid_"+userid.substr(7)).remove();
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(errorThrown);
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div align="center">
+    <p>用户名：<input type="text" class="input_1" id="nameretrieve" />
+        <button type="button" class="search" onclick="retrieve()">检索</button>
+    </p>
+</div>
+<div align="center">
+    <table id="dataTable" cellpadding="0" cellspacing="1" border="1px solid #ccc">
+        <thead>
+        <tr>
+            <th width="20%">用户名</th>
+            <th width="10%">用户类型</th>
+            <th width="20%">创建时间</th>
+            <th width="10%">密码重置</th>
+            <th width="10%">删除</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+</body>
+</html>

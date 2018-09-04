@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    min-width: 1200px;
+}
+header{
+    /*width:1920px;*/
+    margin:0 auto;
+}
+.headerOne{
+    width:100%;
+    height:60px;
+    background-color:#1448ad;
+}
+.header-container{
+    width:1200px;
+    height:60px;
+    line-height:60px;
+    margin:0 auto;
+}
+.header-logo{
+    margin-top:10px;
+    float:left;
+}
+.headerOne-right{
+    float:right;
+    position:relative;
+}
+.header-container:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+.headerOne-right>span{
+    color:#fff;
+    font-size:14px;
+    line-height:60px;
+    margin-right:15px;
+}
+.headerOne-right>img{
+    margin-left:38px;
+}
+.headerOne-right .header-phone{
+    font-size:20px;
+}
+.headerOne-right .icon-mobile:hover:before{
+    color:#ffcc00;
+}
+.headerOne-right .icon-WeChat:hover:before{
+    color:#ffcc00;
+}
+.headerOne-right .header-wechat{
+    font-size:20px;
+}
+.phone-hover{
+    width:141px;
+    height:199px;
+    position:absolute;
+    top:40px;
+    right:23px;
+    display: none;
+}
+.wechat-hover{
+    width:141px;
+    height:220px;
+    position:absolute;
+    top:40px;
+    right:-25px;
+    display: none;
+}
+.triangle-border-up{
+    margin-left:85px;
+    width:0;
+    height:0;
+    border-width:0 10px 10px;
+    border-style:solid;
+    border-color:transparent transparent #fff;
+}
+.hover-cont{
+    width:141px;
+    padding:20px;
+    background-color: #fff;
+    z-index: 5;
+}
+.hover-cont>span{
+    display: block;
+    font-size:12px;
+    line-height:23px;
+    margin-top:10px;
+}
+.hover-cont .ilvxing{
+    font-family: Calibri;
+    font-size:30px;
+    color: #1448ad;
+}
+
+.headerTwo{
+    width:100%;
+    height:60px;
+    background-color:#000;
+}
+.header-tit{
+    float:left;
+}
+.header-tit>li{
+    display:inline-block;
+    width:103px;
+    height:60px;
+    text-align:center;
+    line-height:60px;
+    margin-right:20px;
+}
+.header-tit>li>img,.header-tit>li>a{
+    vertical-align: middle;
+}
+.header-tit>li>a{
+    color:#fff;
+    font-size:14px;
+    margin-left:5px;
+}
+.header-active{
+    background-color:#1ab2db;
+    cursor: pointer;
+}
+.headertwo-right{
+    float:right;
+}
+.headertwo-right>img,.headertwo-right>span{
+    vertical-align: middle;
+}
+.headertwo-right>span{
+    color:#fff;
+    font-size:14px;
+}
+.headertwo-right>span>a{
+    color:#fff;
+}
+.headertwo-right>span>a:hover{
+    color:#ffcc00;
+}

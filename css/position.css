@@ -1,0 +1,46 @@
+.leaderCon {
+    width: 60px;
+    height: 201px;
+    background-color: #f6f6f6;
+    position: fixed;
+    top: 40%;
+}
+
+.leaderCon>div {
+    width: 60px;
+    height: 50px;
+    /* background: black */
+    /* background: url(img/lvyou.png) no-repeat; */
+}
+
+.leaderCon-font {
+    width: 60px;
+    height: 50px;
+    font-size: 14px;
+    position: relative;
+    display: block;
+    text-align: center;
+    background-color: #1448ad;
+    line-height: 50px;
+    color: white;
+    /* display: none; */
+}
+
+.leaderCon-icon {
+    position: absolute;
+
+    text-align: center;
+    /* margin: 0 auto; */
+    width: 60px;
+    height: 50px;
+    border-bottom: 1px solid #cccccc;
+
+}
+
+.delete {
+    display: none;
+}
+
+.leaderCon-ho>a {
+    text-decoration: none;
+}
