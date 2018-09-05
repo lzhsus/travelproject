@@ -217,7 +217,9 @@
     height: 14px;
     border: 2px solid #1ab2db;
 }
-
+.swiper-pagination-clickable .swiper-pagination-bullet{
+    height: 16px;
+}
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
     left: 600px;
 }
