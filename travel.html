@@ -46,12 +46,12 @@
     <div class="headerTwo">
         <div class="header-container">
             <ul class="header-tit">
-                <li class="header-active"><img src="icon/li-1.png" alt=""/><a href="">首页</a></li>
-                <li><img src="icon/li-2.png" alt=""/><a href="">旅游</a></li>
-                <li><img src="icon/li-3.png" alt=""/><a href="">酒店</a></li>
+                <li class="header-active"><img src="icon/li-1.png" alt=""/><a href="index.html">首页</a></li>
+                <li><img src="icon/li-2.png" alt=""/><a href="travel.html">旅游</a></li>
+                <li><img src="icon/li-3.png" alt=""/><a href="hotel.html">酒店</a></li>
                 <li><img src="icon/li-4.png" alt=""/><a href="">机票</a></li>
                 <li><img src="icon/li-5.png" alt=""/><a href="">门票</a></li>
-                <li><img src="icon/li-6.png" alt=""/><a href="">攻略</a></li>
+                <li><img src="icon/li-6.png" alt=""/><a href="strategy.html">攻略</a></li>
             </ul>
             <div class="headertwo-right">
                 <img src="icon/user.png" alt=""/>
@@ -656,7 +656,7 @@
         </div>
         <div class="box-banner-right">
             <div>
-                <input type="text" placeholder="景区/地点/关键词...">
+                <input style="outline:none" type="text" placeholder="景区/地点/关键词...">
                 <span><img src="icon/icon-sousuo-input.png"></span>
                 <span class="dianji" id="dianji">北京<img class="img-click" src="icon/icon-jiantou-bottom.png">
                     <div class="morecenter">
@@ -996,5 +996,18 @@
 <script src="js/travel.js"></script>
 
 <script>
-
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    $('.swiper-container').mouseover(function () {
+        mySwiper.autoplay.stop();
+    })
+    $('.swiper-container').mouseout(function () {
+        mySwiper.autoplay.start();
+    })
 </script>

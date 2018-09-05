@@ -32,21 +32,7 @@ $(function () {
             $(this).find(".box-content-left").hide()
         }
     )
-//    轮播图
-    var mySwiper = new Swiper('.swiper-container', {
-        loop: true,
-        autoplay: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-    $('.box-banner-content').mouseover(function () {
-        mySwiper.autoplay.stop();
-    })
-    $('.box-banner-content').mouseout(function () {
-        mySwiper.autoplay.start();
-    })
+
 //    更多人们诚实
     $(".recommend-line ul .active div").show();
 

@@ -56,9 +56,11 @@
 .box-banner-left .ul-fa > li .div-fa> .h3{
     font-size: 16px;
     color: #1ab2db;
+    margin-bottom: 2px;
 }
 .box-banner-left .ul-fa > li .div-fa>ul li{
     margin-right: 20px;
+    margin-bottom: 4px;
 }
 .box-banner-left .ul-fa > li .div-fa>ul a{
     font-size: 14px;

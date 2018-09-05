@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>热门酒店</title>
+    <link rel="stylesheet" type="text/css" href="css/cityPicker.css">
     <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="icomoon/style.css"/>
@@ -47,12 +48,12 @@
     <div class="headerTwo">
         <div class="header-container">
             <ul class="header-tit">
-                <li class="header-active"><img src="icon/li-1.png" alt=""/><a href="">首页</a></li>
-                <li><img src="icon/li-2.png" alt=""/><a href="">旅游</a></li>
-                <li><img src="icon/li-3.png" alt=""/><a href="">酒店</a></li>
+                <li class="header-active"><img src="icon/li-1.png" alt=""/><a href="index.html">首页</a></li>
+                <li><img src="icon/li-2.png" alt=""/><a href="travel.html">旅游</a></li>
+                <li><img src="icon/li-3.png" alt=""/><a href="hotel.html">酒店</a></li>
                 <li><img src="icon/li-4.png" alt=""/><a href="">机票</a></li>
                 <li><img src="icon/li-5.png" alt=""/><a href="">门票</a></li>
-                <li><img src="icon/li-6.png" alt=""/><a href="">攻略</a></li>
+                <li><img src="icon/li-6.png" alt=""/><a href="strategy.html">攻略</a></li>
             </ul>
             <div class="headertwo-right">
                 <img src="icon/user.png" alt=""/>
@@ -100,7 +101,9 @@
             <form action="" method="post" class="form-tit">
                 <div class="form-tit-block">
                     <label>目&nbsp;的&nbsp;地</label>
-                    <input type="text" placeholder="中文/拼音/首字母">
+                    <input id="cityChoice"  type="text" placeholder="中文/拼音/首字母">
+                    <input type="hidden" id="province" value="">
+                    <input type="hidden" id="city" value="">
                     <label class="label-size"><a href="javascript:;">搜索历史 ﹀</a> </label>
                 </div>
                 <div class="form-tit-block input-long">
@@ -495,22 +498,33 @@
 <script src="js/swiper.js"></script>
 <script src="laydate/laydate.js"></script>
 <script src="js/hotel.js"></script>
+<script src="js/cityData.js"></script>
+<script src="js/cityPicker.js"></script>
 <script>
     var mySwiper = new Swiper('.swiper-container', {
-        pagination: {       //对应的小圆圈
-            el: '.swiper-pagination',
-        },
-        //等同于以下设置 autoplay:true, 延迟播放 300s
+        loop: true,
         autoplay: true,
-        loop: true,    //循环移动
-        // effect : 'cube',        //3D 图片
-        effect: 'fade',    //淡入 淡出
-    })
-    mySwiper.el.onmouseover = function () {
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    $('.box-banner-content').mouseover(function () {
         mySwiper.autoplay.stop();
-    }
-    //鼠标离开开始自动切换
-    mySwiper.el.onmouseout = function () {
+    })
+    $('.box-banner-content').mouseout(function () {
         mySwiper.autoplay.start();
-    }
+    })
+    var cityPicker = new IIInsomniaCityPicker({
+        data: cityData,
+        target: '#cityChoice',
+        valType: 'k-v',
+        hideCityInput: '#city',
+        hideProvinceInput: '#province',
+        callback: function(city_id){
+            alert(city_id);
+        }
+    });
+
+    cityPicker.init();
 </script>

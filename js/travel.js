@@ -25,6 +25,10 @@ $(function () {
             }
             num1++
         });
+    //input 搜索框
+    $(".box-banner-right input").focus(function () {
+        console.log($(this))
+    })
     //轮播图  左边的内容
     $(".ul-fa>li").hover(
         function () {
@@ -37,23 +41,6 @@ $(function () {
             $(this).find(".div-show").hide()
         }
     )
-    var mySwiper = new Swiper('.swiper-container', {
-        pagination: {       //对应的小圆圈
-            el: '.swiper-pagination',
-        },
-        //等同于以下设置 autoplay:true, 延迟播放 300s
-        autoplay: true,
-        loop: true,    //循环移动
-        // effect : 'cube',        //3D 图片
-        effect: 'fade',    //淡入 淡出
-    })
-    mySwiper.el.onmouseover = function () {
-        mySwiper.autoplay.stop();
-    }
-    //鼠标离开开始自动切换
-    mySwiper.el.onmouseout = function () {
-        mySwiper.autoplay.start();
-    }
 
     //    懒加载
     function ljz() {
