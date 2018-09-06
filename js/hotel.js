@@ -57,14 +57,22 @@ $(function () {
     //
     $(".more-click").hover(
         function () {
-            $(this).css("color","#1448ad")
+            $(this).css("color", "#1448ad")
             $(this).parents("section").find(".morecenter").show()
-            $(this).parents("section").find(".jiantou").css("transform","rotate(0)")
-        },function () {
+            $(this).parents("section").find(".jiantou").css("transform", "rotate(0)")
+        }, function () {
             $(this).parents("section").find(".morecenter").hide()
-            $(this).parents("section").find(".jiantou").css("transform","rotate(270deg)")
+            $(this).parents("section").find(".jiantou").css("transform", "rotate(270deg)")
         }
     )
+    //左定位条定位
+    $(document).scroll(function () {
+        console.log(typeof scrollY, 520)
+        if (scrollY == 520) {
+            console.log("相等")
+            $(".leaderCon-font").show();
+        }
+    })
     //图片的放大 缩小
     $(".big-img").hover(
         function () {
@@ -215,6 +223,7 @@ $(function () {
             }
         });
     }
+
     function hotelAjaxFnP1_2($scenic) {
         //异步请求 加载景点 信息
         var $li = null;
@@ -269,6 +278,7 @@ $(function () {
             }
         });
     }
+
     function hotelAjaxFnP1_3($scenic) {
         //异步请求 加载景点 信息
         var $li = null;
@@ -323,6 +333,7 @@ $(function () {
             }
         });
     }
+
     function hotelAjaxFnP1_4($scenic) {
         //异步请求 加载景点 信息
         var $li = null;
@@ -377,6 +388,7 @@ $(function () {
             }
         });
     }
+
     function hotelAjaxFnP1_5($scenic) {
         //异步请求 加载景点 信息
         var $li = null;
@@ -552,18 +564,19 @@ $(function () {
     $(".p1-title ul li a").click(function () {
         $(this).parents("section").find(".p1-title ul li a").removeClass("active");
         $(this).addClass("active")
-        $(this).parents("section").find(".content-center-scenic").html("")
-        if ($(this).parent().index() == 0) {
-            hotelAjaxFnP1($hotelP1);
-        }else if ($(this).parent().index() == 1) {
-            hotelAjaxFnP1_2($hotelP1);
-        }else if ($(this).parent().index() == 2) {
-            hotelAjaxFnP1_3($hotelP1);
-        }else if ($(this).parent().index() == 3) {
-            hotelAjaxFnP1_4($hotelP1);
-        }else if ($(this).parent().index() == 4) {
-            hotelAjaxFnP1_5($hotelP1);
+        if ($(this).parents("section").index() == 3) {
+            $(this).parents("section").find(".content-center-scenic").html("")
+            if ($(this).parent().index() == 0) {
+                hotelAjaxFnP1($hotelP1);
+            } else if ($(this).parent().index() == 1) {
+                hotelAjaxFnP1_2($hotelP1);
+            } else if ($(this).parent().index() == 2) {
+                hotelAjaxFnP1_3($hotelP1);
+            } else if ($(this).parent().index() == 3) {
+                hotelAjaxFnP1_4($hotelP1);
+            } else if ($(this).parent().index() == 4) {
+                hotelAjaxFnP1_5($hotelP1);
+            }
         }
-
     })
 });

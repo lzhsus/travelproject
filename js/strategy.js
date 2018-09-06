@@ -254,6 +254,7 @@ $(function () {
     var $rmdImg2 = $("#recommend2 .recommend-img");
     ajaxFnImg($rmdImg1);
     ajaxFnImg2($rmdImg2);
+
     $("#recommend2 #recommend li").each(function (i) {
         $(this).click(function () {
             $(this).parents("#recommend2").find(".recommend-img ul").remove()
